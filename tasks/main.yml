@@ -2,12 +2,9 @@
 # tasks file for flaskweb
   - name: Install Flask Web
     pip:
-      name: "{{ item }}"
+      name: ['flask', 'flask-mysql']
       state: present
       executable: pip3
-      with_items:
-        - flask
-        - flask-mysql
 
   - name: Copy Source APP
     copy:
