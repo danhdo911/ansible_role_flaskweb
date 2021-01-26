@@ -8,8 +8,10 @@
 
   - name: Copy Source APP
     copy:
-      src: app.py
+      src: /opt/app.py
       dest: /opt/app.py
+      owner: root
+      group: root
 
   - name: Start Web Server
     shell: FLASK_APP=/opt/app.py nohup flask run --host=0.0.0.0 &
